@@ -1,9 +1,9 @@
-# minSAEs
+# minSAE
+
+A library for training sparse autoencoders on EEG transformer embeddings following the recipe from [Templeton et al., 2024.](https://transformer-circuits.pub/2024/scaling-monosemanticity/)
 
 ![Feature Density](assets/histograms_better.gif)
 ![Weather Dataset](assets/wandb_tracking.png)
-
-This repository contains scripts for:
 
 - **`compute_embeddings.py`**: Extracting and saving intermediate activations (embeddings) from a pretrained PatchTST model on TUH EEG data.
 - **`train.py`**: Training a sparse autoencoder (SAE) on the saved embeddings to learn monosemantic features.
@@ -26,7 +26,7 @@ Clone this repository and install the required dependencies:
 
 ```bash
 git clone https://github.com/TachyonGun/minSAE.git
-cd minPatchTST
+cd minSAE
 pip install wandb twdm matplotlib numpy torch
 ```
 
