@@ -5,8 +5,11 @@ A library for training sparse autoencoders on EEG transformer embeddings followi
 ![Feature Density](assets/histograms_better.gif)
 ![Weather Dataset](assets/wandb_tracking.png)
 
+The pipeline consists of three simple scripts:
+
 - **`compute_embeddings.py`**: Extracting and saving intermediate activations (embeddings) from a pretrained PatchTST model on TUH EEG data.
 - **`train.py`**: Training a sparse autoencoder (SAE) on the saved embeddings to learn monosemantic features.
+- *(PENDING)* **`evaluate.py`**: *(PENDING)* Evaluate the SAE and precompute feature dashboard assets.
 
 
 # Installation
