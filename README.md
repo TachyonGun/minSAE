@@ -21,7 +21,7 @@ Clone this repository and install the required dependencies:
 ```bash
 git clone https://github.com/TachyonGun/minSAE.git
 cd minSAE
-pip install wandb twdm matplotlib numpy torch
+pip install wandb matplotlib numpy torch
 ```
 
 
