@@ -25,7 +25,7 @@ It also expects the gPatchTST repository downloaded and renamed to `gpatchptst`.
 Clone this repository and install the required dependencies:
 
 ```bash
-git clone https://github.com/TachyonGun/minPatchTST.git
+git clone https://github.com/TachyonGun/minSAE.git
 cd minPatchTST
 pip install wandb twdm matplotlib numpy torch
 ```
