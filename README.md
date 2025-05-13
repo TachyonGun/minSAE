@@ -1,11 +1,11 @@
 # minSAE 
 
-A library for training sparse autoencoders on EEG transformer embeddings following the recipe from [Templeton et al., 2024.](https://transformer-circuits.pub/2024/scaling-monosemanticity/)
+A library for training & evaluating SAEs on EEG transformer embeddings in **3 easy steps**, following the recipe from [Templeton et al., 2024.](https://transformer-circuits.pub/2024/scaling-monosemanticity/).
 
 ![Feature Density](assets/histograms_better.gif)
 ![Weather Dataset](assets/wandb_tracking.png)
 
-The pipeline consists of three simple scripts:
+The pipeline consists of these sequential scripts:
 
 - 🔢 **`embed.py`**: Extracting and saving intermediate activations (embeddings) from a pretrained PatchTST model on TUH EEG data.
 - 📉 **`train.py`**: Training a sparse autoencoder (SAE) on the saved embeddings to learn monosemantic features.
