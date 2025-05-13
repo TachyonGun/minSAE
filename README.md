@@ -9,7 +9,7 @@ The pipeline consists of three simple scripts:
 
 - **`embed.py`**: Extracting and saving intermediate activations (embeddings) from a pretrained PatchTST model on TUH EEG data.
 - **`train.py`**: Training a sparse autoencoder (SAE) on the saved embeddings to learn monosemantic features.
-- *(PENDING)* **`evaluate.py`**: *(PENDING)* Evaluate the SAE and precompute feature dashboard assets.
+- **(UNDER CONSTRUCTION)** ~`evaluate.py`: Evaluate the SAE and precompute feature dashboard assets.~
 
 
 # Installation
