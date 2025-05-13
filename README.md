@@ -14,16 +14,7 @@ The pipeline consists of three simple scripts:
 
 # Installation
 
-The scripts expect a `tuhab_preprocessed` directory containing preprocessed EEG data files and a `file_lengths_map.csv`:
-
-```
-tuhab_preprocessed/
-├── file_lengths_map.csv
-├── aaaaaaaq_s004_t000_preprocessed.npy
-└── ...
-```
-
-It also expects the [gPatchTST](https://github.com/gayalkuruppu/gPatchTST/tree/main) repository downloaded and renamed to `gpatchptst`.
+The scripts expect the [gPatchTST](https://github.com/gayalkuruppu/gPatchTST/tree/main) repository downloaded and renamed to `gpatchptst`.
 
 Clone this repository and install the required dependencies:
 
@@ -31,6 +22,16 @@ Clone this repository and install the required dependencies:
 git clone https://github.com/TachyonGun/minSAE.git
 cd minSAE
 pip install wandb twdm matplotlib numpy torch
+```
+
+
+Run the preprocessing scripts for `gpatchtst` to set up a `tuhab_preprocessed` directory containing preprocessed EEG data files and the `file_lengths_map.csv`:
+
+```
+tuhab_preprocessed/
+├── file_lengths_map.csv
+├── aaaaaaaq_s004_t000_preprocessed.npy
+└── ...
 ```
 
 ---
