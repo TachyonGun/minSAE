@@ -1,4 +1,4 @@
-# minSAE
+# minSAE 
 
 A library for training sparse autoencoders on EEG transformer embeddings following the recipe from [Templeton et al., 2024.](https://transformer-circuits.pub/2024/scaling-monosemanticity/)
 
@@ -7,9 +7,9 @@ A library for training sparse autoencoders on EEG transformer embeddings followi
 
 The pipeline consists of three simple scripts:
 
-- **`embed.py`**: Extracting and saving intermediate activations (embeddings) from a pretrained PatchTST model on TUH EEG data.
-- **`train.py`**: Training a sparse autoencoder (SAE) on the saved embeddings to learn monosemantic features.
-- **(UNDER CONSTRUCTION)** ~`evaluate.py`: Evaluate the SAE and precompute feature dashboard assets.~
+- 🔢 **`embed.py`**: Extracting and saving intermediate activations (embeddings) from a pretrained PatchTST model on TUH EEG data.
+- 📉 **`train.py`**: Training a sparse autoencoder (SAE) on the saved embeddings to learn monosemantic features.
+- 📊 **(UNDER CONSTRUCTION)** ~`evaluate.py`: Evaluate the SAE and precompute feature dashboard assets.~
 
 
 # Installation
@@ -36,7 +36,9 @@ tuhab_preprocessed/
 
 ---
 
-## embed.py
+# SAEs in three easy steps
+
+## 1. 🔢 Run `embed.py`
 
 This runs a pretrained PatchTST model (with optional RevIN normalization) on EEG data and captures activations at a specified transformer layer.  The activations are saved as `.npy` files for later analysis or SAE training.
 
@@ -103,7 +105,7 @@ embeddings/
 
 ---
 
-## train.py
+## 2. 📉 Run `train.py`
 
 This loads saved embeddings, trains a two-layer sparse autoencoder (ReLU features + linear decoder) to reconstruct embeddings with a sparsity penalty, and logs metrics.
 
@@ -157,7 +159,11 @@ Feature dimension: 1024
 [Step 150/10720] Processed 36844800 tokens; Avg MSE (last 50): 0.148600; Avg L1 (last 50): 0.147449; Avg active features/sample: 351.18; Window time: 10.90s; ETA: 00:38:24
 ```
 
-### Training outputs
+## 3. 📊 ~Run `evaluate.py`~
+
+**(Under Construction)**
+
+## Training outputs & Evaluation
 
 The script will save a spreadsheet `act_freqs.csv` with activation counts over the `eval_window`. You can use this to compute featue density histograms as above.
 
@@ -165,9 +171,9 @@ The script will save a spreadsheet `act_freqs.csv` with activation counts over t
 
 If `wandb` is installed and configured, metrics (avg MSE, avg L1, avg active features, config, etc.) are logged under project **`minSAE`**.  If `wandb` import or setup fails, the script will continue without error and skip logging.
 
-## TODO
+## TODO 🚧
 
-Still need to add evaluation scripts, such as maximum activating sequences and patches (showing a window including `w` patches to either side). I have only validated that the sparse autoencoder works by evaluating L1, average non-zero features per sample, and the evolution of the feature density histogram.
+Still need to add `evaluate.py`, such as maximum activating sequences and patches (showing a window including `w` patches to either side). I have only validated that the sparse autoencoder works by evaluating L1, average non-zero features per sample, and the evolution of the feature density histogram.
 
 Need to add an optimized dataloader and multi-GPU support, potentially run multiple parallel models at once to explore hyperparameters.
 
