@@ -23,7 +23,7 @@ tuhab_preprocessed/
 └── ...
 ```
 
-It also expects the gPatchTST repository downloaded and renamed to `gpatchptst`.
+It also expects the [gPatchTST](https://github.com/gayalkuruppu/gPatchTST/tree/main) repository downloaded and renamed to `gpatchptst`.
 
 Clone this repository and install the required dependencies:
 
