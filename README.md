@@ -7,7 +7,7 @@ A library for training sparse autoencoders on EEG transformer embeddings followi
 
 The pipeline consists of three simple scripts:
 
-- **`compute_embeddings.py`**: Extracting and saving intermediate activations (embeddings) from a pretrained PatchTST model on TUH EEG data.
+- **`embed.py`**: Extracting and saving intermediate activations (embeddings) from a pretrained PatchTST model on TUH EEG data.
 - **`train.py`**: Training a sparse autoencoder (SAE) on the saved embeddings to learn monosemantic features.
 - *(PENDING)* **`evaluate.py`**: *(PENDING)* Evaluate the SAE and precompute feature dashboard assets.
 
@@ -36,16 +36,14 @@ tuhab_preprocessed/
 
 ---
 
-## compute_embeddings.py
+## embed.py
 
-### Purpose
-
-`compute_embeddings.py` runs a pretrained PatchTST model (with optional RevIN normalization) on EEG data and captures activations at a specified transformer layer.  The activations are saved as `.npy` files for later analysis or SAE training.
+This runs a pretrained PatchTST model (with optional RevIN normalization) on EEG data and captures activations at a specified transformer layer.  The activations are saved as `.npy` files for later analysis or SAE training.
 
 ### Usage
 
 ```bash
-python compute_embeddings.py \
+python embed.py \
   --root_path="/path/to/tuhab_preprocessed" \
   --config_path="pretrained/config.yaml" \
   --checkpoint_path="pretrained/checkpoint.pth" \
@@ -64,7 +62,7 @@ python compute_embeddings.py \
 ### Example Call
 
 ```bash
-C:/Users/sierr/anaconda3/envs/mats_sae_training/python.exe "c:/Users/sierr/Desktop/Research/.../minSAEs/compute_embeddings.py" \
+C:/Users/sierr/anaconda3/envs/mats_sae_training/python.exe "c:/Users/sierr/Desktop/Research/.../minSAEs/embed.py" \
   --root_path="C:\\Users\\sierr\\Desktop\\Research\\...\\minSAEs\\tuhab_preprocessed" \
   --config_path="pretrained/test_pretrain_repo_tuhab_patch_10.yaml" \
   --checkpoint_path="pretrained/checkpoint_epoch_100.pth" \
@@ -107,9 +105,7 @@ embeddings/
 
 ## train.py
 
-### Purpose
-
-`train.py` loads saved embeddings, trains a two-layer sparse autoencoder (ReLU features + linear decoder) to reconstruct embeddings with a sparsity penalty, and logs metrics.
+This loads saved embeddings, trains a two-layer sparse autoencoder (ReLU features + linear decoder) to reconstruct embeddings with a sparsity penalty, and logs metrics.
 
 ### Usage
 
