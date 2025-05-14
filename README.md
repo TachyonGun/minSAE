@@ -3,7 +3,7 @@
 A library for training & evaluating SAEs on EEG transformer embeddings in **3 easy steps**, following the recipe from [Templeton et al., 2024.](https://transformer-circuits.pub/2024/scaling-monosemanticity/).
 
 ![Feature Density](assets/histograms_better.gif)
-![Weather Dataset](assets/wandb_tracking.png)
+![Weather Dataset](assets/wandb.png)
 
 The pipeline consists of these sequential scripts:
 
